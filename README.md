@@ -23,18 +23,24 @@ This project provides a Python script that transcribes audio files using **Googl
 
 ## 🔧 Installation
 
-1. **Clone the repository** (if applicable):
+1. **Clone the repository and access the folder:
     ```bash
-    git clone <repository_url>
-    cd <repository_folder>
+    
+    git clone --branch main https://github.com/profmoisesomena/simple_audio_transcription_gemini.git --single-branch
+    cd simple_audio_transcription_geminin/
     ```
-
-2. **Install the required dependencies**:
+3. **Create and activate a virtual environment**:
+   ```bash
+    sudo apt install python3.10-venv
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+4. **Install the required dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Create a `.env` file** in the project directory to store your API key:
+5. **Create a `.env` file** in the project directory to store your API key:
     ```env
     GEMINI_API_KEY=your_google_gemini_api_key_here
     ```
