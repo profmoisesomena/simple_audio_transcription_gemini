@@ -1,92 +1,92 @@
-# YouTube Transcription com Google Gemini
+# 🎙️ Audio Transcription with Google Gemini
 
-Este script permite baixar vídeos do YouTube, extrair o áudio e gerar transcrições usando a API do Google Gemini, em vez do OpenAI Whisper.
+This project provides a Python script that transcribes audio files using **Google Gemini API**. It takes an audio file (e.g., `.mp3`) as input and outputs a complete transcription, including optional timestamps and speaker identification.
 
-## Requisitos
+---
 
-- Python 3.6+
-- Bibliotecas Python:
-  - yt-dlp
-  - google-generativeai
-  - python-dotenv
-- FFmpeg (dependência do sistema)
-- Chave de API do Google Gemini
+## ✅ Features
 
-## Instalação
+- Transcribes audio files using the **Google Gemini** model.
+- Supports adding timestamps every 30 seconds.
+- Identifies multiple speakers (if present).
+- Saves the transcription to a `.txt` file.
 
-1. Clone este repositório ou baixe os arquivos
+---
 
-2. Instale as dependências Python:
-   ```
-   pip install -r requirements.txt
-   ```
+## 📦 Requirements
 
-3. Instale o FFmpeg:
-   - **Ubuntu/Debian**: `sudo apt update && sudo apt install ffmpeg`
-   - **Windows**: Baixe do [site oficial](https://ffmpeg.org/download.html) ou use o Chocolatey: `choco install ffmpeg`
-   - **macOS**: `brew install ffmpeg`
+- Python 3.7 or higher
+- Google Generative AI Python SDK (`google-generativeai`)
+- `python-dotenv` to load environment variables
 
-4. Obtenha uma chave de API do Google Gemini:
-   - Acesse [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Crie uma chave de API
-   - Guarde a chave para usar com o script
+---
 
-## Uso
+## 🔧 Installation
 
-### Método 1: Definir a chave de API em um arquivo .env
+1. **Clone the repository** (if applicable):
+    ```bash
+    git clone <repository_url>
+    cd <repository_folder>
+    ```
 
-Crie um arquivo `.env` com o seguinte conteúdo:
-```
-GEMINI_API_KEY=sua_chave_api_aqui
-```
+2. **Install the required dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Depois execute o script:
-```
-python youtube_transcription_gemini.py https://www.youtube.com/watch?v=ID_DO_VIDEO
-```
+3. **Create a `.env` file** in the project directory to store your API key:
+    ```env
+    GEMINI_API_KEY=your_google_gemini_api_key_here
+    ```
 
-### Método 2: Definir a chave de API como variável de ambiente
+---
+
+## 🚀 Usage
+
+To run the transcription script:
 
 ```bash
-# Linux/macOS
-export GEMINI_API_KEY="sua_chave_api_aqui"
-
-# Windows (PowerShell)
-$env:GEMINI_API_KEY="sua_chave_api_aqui"
+python3 simple_audio_transcriber_by_gemini path/to/your_audio_file.mp3
 ```
 
-Depois execute o script:
-```
-python youtube_transcription_gemini.py https://www.youtube.com/watch?v=ID_DO_VIDEO
-```
-
-### Método 3: Passar a chave de API como argumento
-
-```
-python youtube_transcription_gemini.py https://www.youtube.com/watch?v=ID_DO_VIDEO --api-key "sua_chave_api_aqui"
+### Example:
+```bash
+python3 simple_audio_transcriber_by_gemini ./meeting_recording.mp3
 ```
 
-### Opções adicionais
-
-- `--output ARQUIVO`: Especifica o arquivo de saída para a transcrição
-- `--keep-audio`: Mantém o arquivo de áudio após a transcrição (por padrão, o áudio é removido)
-
-Exemplo:
+After processing, the transcription will be saved as:
 ```
-python youtube_transcription_gemini.py https://www.youtube.com/watch?v=ID_DO_VIDEO --output minha_transcricao.txt --keep-audio
+./meeting_recording_transcricao.txt
 ```
 
-## Como funciona
+---
 
-1. O script baixa o vídeo do YouTube usando a biblioteca yt-dlp (mais robusta que pytube)
-2. Extrai o áudio do vídeo e converte para MP3
-3. Envia o áudio para a API do Google Gemini para transcrição
-4. Salva a transcrição em um arquivo de texto
+## ⚠️ Notes
 
-## Diferenças em relação ao OpenAI Whisper
+- The script works with audio files (`mp3` recommended, but `mp4`, 'ogg' (by whatsapp), wav, etc. may work too).
+- Large files may take a few minutes to process.
+- Ensure your **Google Gemini API key** is valid and has the necessary permissions for content generation.
+- Timestamps and speaker identification depend on the model's capabilities and may vary in accuracy.
 
-- Usa a API do Google Gemini em vez do modelo Whisper da OpenAI
-- Não requer instalação de modelos grandes localmente
-- Requer uma chave de API do Google
-- Pode incluir marcações de tempo e identificação de falantes automaticamente
-# simple_audio_transcription_gemini
+---
+
+## 🛠️ Configuration
+
+You can modify the model used for transcription by changing this line in the script:
+```python
+transcribe_audio(args.audio_file, api_key, gemini_model='gemini-1.5-pro')
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 💡 Author
+
+Created by Moisés Omena 
+Feel free to contribute or suggest improvements!
+
