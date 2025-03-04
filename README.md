@@ -69,7 +69,7 @@ After processing, the transcription will be saved as:
 
 ## ⚠️ Notes
 
-- The script works with audio files (`mp3` recommended, but `mp4`, 'ogg' (by whatsapp), wav, etc. may work too).
+- The script works with audio files (`mp3` recommended, but `mp4`, `mpeg`,  `ogg` (by whatsapp), `wav`, etc. may work too).
 - Large files may take a few minutes to process.
 - Ensure your **Google Gemini API key** is valid and has the necessary permissions for content generation.
 - Timestamps and speaker identification depend on the model's capabilities and may vary in accuracy.
