@@ -83,14 +83,6 @@ You can modify the model used for transcription by changing this line in the scr
 transcribe_audio(args.audio_file, api_key, gemini_model='gemini-1.5-pro')
 ```
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 💡 Author
 
 Created by Moisés Omena 
