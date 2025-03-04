@@ -22,6 +22,7 @@ def transcribe_audio(audio_file_path, api_key, gemini_model):
         print(f"Arquivo de áudio carregado contém({len(audio_data)/1024/1024:.2f} MB)")
         print("Enviando para o Gemini para transcrição. Isso pode levar alguns minutos...")
         
+        
         prompt = """
         Por favor, forneça uma transcrição completa e precisa deste áudio.
         Inclua marcações de tempo a cada 30 segundos, se possível.

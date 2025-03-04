@@ -87,5 +87,3 @@ transcribe_audio(args.audio_file, api_key, gemini_model='gemini-1.5-pro')
 
 Created by Moisés Omena 
 Feel free to contribute or suggest improvements!
-
-# simple_audio_transcription_gemini
